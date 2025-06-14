@@ -1,3 +1,8 @@
+const customerInitialState = {
+  fullName: "",
+  Nationality: "",
+};
+
 export default function customerReducer(state = customerInitialState, action) {
   switch (action.type) {
     case "customer/createCustomer":
