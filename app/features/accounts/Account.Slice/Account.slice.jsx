@@ -1,7 +1,3 @@
-const customerInitialState = {
-  fullName: "",
-  Nationality: "",
-};
 const accountInitialState = {
   loan: 0,
   balance: 0,
