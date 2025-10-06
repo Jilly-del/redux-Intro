@@ -1,18 +1,18 @@
 "use client";
-import CreateCustomer from "./features/customers/CreateCustomer/createCustomer";
-import Customer from "./features/customers/Customer/customer";
-import AccountOperations from "./features/accounts/AccountOperation/AccountOperations";
-import BalanceDisplay from "./features/accounts/BalanceDisplay/BalanceDisplay";
-import { Provider, useSelector } from "react-redux";
-import store from "./store/store";
+
+import { useSelector } from "react-redux";
+import CreateCustomer from "./features/customer/CreateCustomer";
+import Customer from "./features/customer/Customer";
+import AccountOperations from "./features/account/AccountOperations";
+import BalanceDisplay from "./features/account/BalanceDisplay";
 
 function App() {
-  let customer = useSelector((state) => state.customer.fullName);
-  console.log(customer);
+  const fullName = useSelector((store) => store.customer.fullName);
+
   return (
     <div>
       <h1>🏦 The React-Redux Bank ⚛️</h1>
-      {customer == "" ? (
+      {fullName == " " ? (
         <CreateCustomer />
       ) : (
         <>
@@ -25,12 +25,4 @@ function App() {
   );
 }
 
-function Appz() {
-  return (
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
-}
-
-export default Appz;
+export default App;

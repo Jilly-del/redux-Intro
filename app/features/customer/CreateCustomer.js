@@ -1,12 +1,11 @@
-"use client";
-
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createCustomer } from "../Customer.slice/Customer.slice";
+import { createCustomer } from "./customerSlice";
 
-function CreateCustomer() {
+function Customer() {
   const [fullName, setFullName] = useState("");
   const [nationalId, setNationalId] = useState("");
+
   const dispatch = useDispatch();
 
   function handleClick() {
@@ -38,4 +37,4 @@ function CreateCustomer() {
   );
 }
 
-export default CreateCustomer;
+export default Customer;
